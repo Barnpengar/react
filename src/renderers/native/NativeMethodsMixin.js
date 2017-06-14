@@ -228,6 +228,8 @@ function setNativePropsStack(componentOrHandle: any, nativeProps: Object) {
   const tag: number = typeof maybeInstance.getHostNode === 'function'
     ? maybeInstance.getHostNode()
     : maybeInstance._rootNodeID;
+  
+  if(!viewConfig) return
 
   if (__DEV__) {
     warnForStyleProps(nativeProps, viewConfig.validAttributes);
